@@ -1,84 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Precious Odia — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Precious Odia — Frontend developer and designer. Responsive portfolio showcasing projects and contact details.">
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#Home">Home</a></li>
-                <li><a href="#About">About</a></li>
-                <li><a href="#Projects">Projects</a></li>
-                <li><a href="#Contact">Contact</a></li>
-            </ul>
-        </nav>
-        
-    </header>
-    <main>
-        <section id="Home" class="Home">
-            <img src="IMG_4118.PNG" alt="photo">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#Home">Precious Odia</a>
+      <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+      <nav id="primary-navigation" class="navbar" role="navigation">
+        <ul>
+          <li><a href="#Home">Home</a></li>
+          <li><a href="#About">About</a></li>
+          <li><a href="#Projects">Projects</a></li>
+          <li><a href="#Contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-            <div class="Home-text">
-            <h2>Hi, I'm precious</h2>
-            <p>A web Developer | Designer | Content creator</p>
-           </div>
-        </section>
+  <main>
+    <section id="Home" class="home container">
+      <img src="IMG_4118.PNG" alt="Portrait of Precious" class="hero-image">
+      <div class="home-text">
+        <h1>Hi, I'm Precious</h1>
+        <p class="lead">Frontend developer • Designer • Content creator</p>
+        <p>I build modern, accessible and responsive interfaces focused on clarity and performance.</p>
+        <p><a class="btn" href="#Projects">See my work</a></p>
+      </div>
+    </section>
 
-        <section id="About" class="About">
-            <h2>About me</h2>
-            <p> I am a website developer with skills in HTML, CSS and responsive designs. <br> I build
-                modern, responsive and user friendly websites, i create
-                beautiful and clean interfaces, ensuring accessibilty and performance. </p> <p> I am passionate About
-                user experience and clear designs. <br> I also enjoy content
-                creation and showing my life story to inspire others. </p> I am currently building my
-                projects to strengthen my frontend development skills.
-        </section>
+    <section id="About" class="about container">
+      <h2>About Me</h2>
+      <p>I am a website developer with skills in HTML, CSS and responsive design. I build modern, user-friendly websites with clean interfaces, accessibility and performance in mind.</p>
+      <p>I enjoy crafting elegant layouts and sharing my learning through content creation.</p>
+    </section>
 
-        <section id="Projects" class="Projects">
-            <h2>Projects</h2>
+    <section id="Projects" class="projects container">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <article class="project-card">
+          <h3>Personal Portfolio</h3>
+          <p>A responsive portfolio showcasing projects and skills.</p>
+          <a class="project-link" href="#">View project</a>
+        </article>
 
-            <div class="Project-grid"> 
+        <article class="project-card">
+          <h3>Landing Page</h3>
+          <p>Responsive landing page focused on layout and conversion.</p>
+          <a class="project-link" href="#">View project</a>
+        </article>
 
-                <div class="project-card">
-                    <h3>Personal Portfolio Website</h3>
-                    <p>A responsive portfolio website built using HTML and CSS.</p>
-                    <span>Practice Project</span>
-                </div>
+        <article class="project-card">
+          <h3>Business Website</h3>
+          <p>Clean, professional site template for small businesses.</p>
+          <a class="project-link" href="#">View project</a>
+        </article>
+      </div>
+    </section>
 
-                <div class="project-card">
-                    <h3>Responsive Landing Page</h3>
-                    <p>A modern landing page focused on layout and mobile responsiveness</p>
-                    <span>Practice Project</span>
+    <section id="Contact" class="contact container">
+      <h2>Contact</h2>
+      <div class="contact-info">
+        <p>Email: <a href="mailto:Abigailodia28@gmail.com">Abigailodia28@gmail.com</a></p>
+        <p>Phone: <a href="tel:+2348029439230">+234 802 943 9230</a></p>
+        <p>Location: Nigeria</p>
+      </div>
+    </section>
 
-                    <div class="project-card">
-                        <h3>Business Website</h3>
-                        <p>A clean website design for small businesses</p>
-                        <span>Practice Project</span>
-                    </div>
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2025 Precious Odia. All rights reserved.</p>
+      </div>
+    </footer>
+  </main>
 
-                </div>
-            </div>
-        </section>
-
-        <section id="Contact" class="Contact">
-            <h2>Contact Me</h2>
-            <div class="Contact-info">
-                <p>Email @: <a href="Abigailodia28@gmail.com">Abigailodia28@gmail.com</a></p>
-                <p>Phone: <a href="+234 802 943 9230">+234 802 943 9230</a>
-                <p>Location: Nigeria
-            </div>
-        </section>
-
-        <footer class="footer"> 
-            <p>&copy; 2025 Precious odia. All rights reserved.</p>
-        </footer>
-        
-
-    </main>
+  <script>
+    const btn = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('primary-navigation');
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true' || false;
+      btn.setAttribute('aria-expanded', !expanded);
+      nav.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
